@@ -28,8 +28,8 @@ public class Program {
             // 物件集合 (選中的物件集合的 元素)
             var referenceCol = uiApp.ActiveUIDocument.Selection.PickObjects(ObjectType.Element, "請選擇模型構件");
 
-            //判斷是否有選擇物件
-            if(referenceCol.Count != 0) {
+            //判斷是否有選擇物件 及 超過 1個物件
+            if(referenceCol.Count > 1) {
                 //TaskDialog.Show("Counter", $"選中了: {referenceCol.Count}個物件"); //For debug
                 JoinAllGeometry(doc, referenceCol); // 接合所有物件函數方法
             } else {
